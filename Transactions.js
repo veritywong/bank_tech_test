@@ -13,11 +13,13 @@ class Transactions {
         return this.withdrawals;
     }
 
-    depositMoney(amount) {
+    depositMoney(date, amount) {
+        this.deposits.push({date: date, credit: +amount});
 
     }
 
-    withdrawMoney(amount) {
+    withdrawMoney(date, amount) {
+        this.withdrawals.push({date: date, debit: +amount});
 
     }
 }
