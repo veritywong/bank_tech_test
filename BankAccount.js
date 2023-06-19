@@ -4,10 +4,6 @@ class BankAccount {
 
     }
 
-    viewTransactions() {
-        return this.transactions;
-    }
-
     calculateBalance() {
         let sum = 0;
 
