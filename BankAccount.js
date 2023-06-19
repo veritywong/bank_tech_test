@@ -38,11 +38,11 @@ class BankAccount {
     }
 
     viewTransactions() {
-        return this.transactions.map((transaction) => {
+        console.log('date || credit || debit || balance')
+        return this.transactions.reverse().map((transaction) => {
             const formattedCredit = typeof transaction.credit === 'number' ? transaction.credit.toFixed(2) : '';
             const formattedDebit = typeof transaction.debit === 'number' ? transaction.debit.toFixed(2) : '';
             const formattedBalance = transaction.balance.toFixed(2);
-            console.log('date || credit || debit || balance')
             console.log(`${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`)
             return `${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`
         })

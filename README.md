@@ -25,7 +25,9 @@ date || credit || debit || balance
 - node
 const BankAccount = require('./BankAccount')
 let account = new BankAccount();
-account.depositMoney('10/001/23', 1000.00)
+account.depositMoney('10/001/23', 1000.00);
+account.depositMoney('13/01/2023', 2000.00);
+account.withdrawMoney('14/01/2023', 500.00);
 account.viewTransactions()
 
 
