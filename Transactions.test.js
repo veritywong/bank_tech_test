@@ -31,4 +31,31 @@ describe('Transactions', () => {
        result = transaction.withdrawMoney('14/01/2023', '500');
        expect(transaction.viewWithdrawals()).toEqual([{date: '14/01/2023', debit: 500}])
     })
+
+    it('displays the balance by detracting debit from credit', () => {
+        transaction.depositMoney('10/01/2023', '1000');
+        transaction.depositMoney('13/01/2023', '2000');
+        transaction.calculateBalance();
+        expect(transaction.viewBalance()).toEqual([3000]);
+    })
+   
+    it('displays the balance by detracting debit from credit', () => {
+        transaction.depositMoney('10/01/2023', '1000');
+        transaction.depositMoney('13/01/2023', '2000');
+        transaction.withdrawMoney('14/01/2023', '500');
+        transaction.calculateBalance();
+        expect(transaction.viewBalance()).toEqual([2500]);
+    })
+    
+    it('displays the balance by detracting debit from credit', () => {
+        transaction.depositMoney('10/01/2023', '1000');
+        transaction.calculateBalance();
+        transaction.depositMoney('13/01/2023', '2000');
+        transaction.calculateBalance();
+        transaction.withdrawMoney('14/01/2023', '500');
+        transaction.calculateBalance();
+        expect(transaction.viewBalance()).toEqual([1000, 3000, 2500]);
+    })
+
+    
 })
