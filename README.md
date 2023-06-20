@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-Create a programme that displays a bank account statment, which includes date, credit, debit and balance.
+Create a programme that displays a bank account statment with given information, which includes date, credit, debit and balance.
 
 ## Challenge Description
 Requirements
@@ -21,13 +21,24 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 
 ## To run programme using node
-- open terminal and go into bank_tech_test directory
-- node
-const BankAccount = require('./BankAccount')
-let account = new BankAccount();
-account.depositMoney('10/001/23', 1000.00);
-account.depositMoney('13/01/2023', 2000.00);
-account.withdrawMoney('14/01/2023', 500.00);
-account.viewTransactions()
+- open terminal and go into the directory bank_tech_test 
+- input into terminal:
+    node
+
+    const AccountTransaction = require('./AccountTransaction')
+    let account = new AccountTransaction();
+    account.depositMoney('10/001/23', 1000.00);
+    account.depositMoney('13/01/2023', 2000.00);
+    account.withdrawMoney('14/01/2023', 500.00);
+    const transactions = account.viewTransactions();
+
+    const AccountStatement = require('./AccountStatement')
+    let statement = new AccountStatement(transactions)
+    statement.viewStatement()
+
+## Diagram
+
+![AccountDiagram](./images/AccountDiagram.png)
+
 
 
