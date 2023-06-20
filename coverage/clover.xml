@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687254752207" clover="3.2.0">
-  <project timestamp="1687254752207" name="All files">
+<coverage generated="1687255928458" clover="3.2.0">
+  <project timestamp="1687255928458" name="All files">
     <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8" elements="30" coveredelements="30" complexity="0" loc="18" ncloc="18" packages="1" files="2" classes="2"/>
     <file name="AccountStatement.js" path="/Users/Verity/Projects/week_10/bank_tech_test/AccountStatement.js">
       <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
