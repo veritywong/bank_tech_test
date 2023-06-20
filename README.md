@@ -19,7 +19,9 @@
 
 ### Approach
 
-I started by creating a diagram to decide on the classes needed to create this programme. I then went on to writing the tests for these, starting with the AccountTransaction Class, then writing the code to pass these tests and then doing the same for the AccountStatement Class.
+I started by creating a diagram to decide on the classes needed to create this programme. I decided that the programme needed two classes, one to record the transactions by handling the inputs, and the other to print these out as a statement.
+After planning the classes in my diagram, I created a new project in VSCode and installed jest as the testing framework for JavaScript.
+I began by writing the tests for the AccountTransaction class, then writing the code to pass these tests, I then repeated these steps for the AccountStatement class, finishing with an integration test for both. 
 
 
 ## Diagram
