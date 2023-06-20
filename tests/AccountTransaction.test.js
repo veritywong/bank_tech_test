@@ -1,4 +1,4 @@
-const AccountTransaction = require("./AccountTransaction");
+const AccountTransaction = require("../AccountTransaction");
 
 describe("AccountTransaction", () => {
   let account;
@@ -12,14 +12,15 @@ describe("AccountTransaction", () => {
   });
 
   it("displays transaction information including date, credit, debit and balance", () => {
-    account.depositMoney("10/01/2023", 1000.00);
+    account.depositMoney("10/01/2023", 1000.0);
     result = account.viewTransactions();
-    expect(result).toEqual([{
-      date: "10/01/2023",
-      credit: 1000,
-      debit: "",
-      balance: 1000,
-    }
+    expect(result).toEqual([
+      {
+        date: "10/01/2023",
+        credit: 1000,
+        debit: "",
+        balance: 1000,
+      },
     ]);
   });
 
@@ -38,8 +39,7 @@ describe("AccountTransaction", () => {
         credit: 2000,
         debit: "",
         balance: 3000,
-      }
-
+      },
     ]);
   });
 
@@ -65,9 +65,20 @@ describe("AccountTransaction", () => {
         credit: "",
         debit: 500,
         balance: 2500,
-      }
+      },
     ]);
   });
-  // figure out how to test console.log in JS
-});
 
+  it("stores amount as an integer even if string is inputted", () => {
+    account.depositMoney("10/01/2023", "1000.00");
+    result = account.viewTransactions();
+    expect(result).toEqual([
+      {
+        date: "10/01/2023",
+        credit: 1000,
+        debit: "",
+        balance: 1000,
+      },
+    ]);
+  });
+});

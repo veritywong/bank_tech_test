@@ -17,7 +17,7 @@ class AccountTransaction {
       date: date,
       credit: +amount,
       debit: "",
-      balance: this.calculateBalance() + amount,
+      balance: this.calculateBalance() + +amount,
     });
   }
 
@@ -26,12 +26,12 @@ class AccountTransaction {
       date: date,
       credit: "",
       debit: +amount,
-      balance: this.calculateBalance() - amount,
+      balance: this.calculateBalance() - +amount,
     });
   }
 
   viewTransactions() {
-   return this.transactions;
+    return this.transactions;
   }
 }
 
