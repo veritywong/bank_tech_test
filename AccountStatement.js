@@ -3,8 +3,8 @@ class AccountStatement {
     this.transactions = transactions;
   }
 
-  viewStatement() {
-    console.log("date || credit || debit || balance");
+  formatStatement() {
+   
     return this.transactions.reverse().map((transaction) => {
       const formattedCredit =
         typeof transaction.credit === "number"
@@ -15,11 +15,17 @@ class AccountStatement {
           ? transaction.debit.toFixed(2)
           : "";
       const formattedBalance = transaction.balance.toFixed(2);
-      console.log(
-        `${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`
-      );
-      return `${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`;
+      const formattedStatement = `${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`;
+      console.log(formattedStatement)
+      return formattedStatement;
+      
     });
+  }
+
+  displayStatement() {
+
+    console.log("date || credit || debit || balance");
+    return this.formatStatement()
   }
 }
 

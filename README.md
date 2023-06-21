@@ -54,19 +54,17 @@ I began by writing the tests for the AccountTransaction class, then writing the 
 
    let account = new AccountTransaction();
 
-   account.depositMoney('10/001/23', 1000.00);
+   account.depositMoney(1000.00);
 
-   account.depositMoney('13/01/2023', 2000.00);
+   account.depositMoney(2000.00);
 
-   account.withdrawMoney('14/01/2023', 500.00);
-
-   const transactions = account.viewTransactions();
+   const transactions = account.withdrawMoney(500.00);
 
    const AccountStatement = require('./AccountStatement');
 
    let statement = new AccountStatement(transactions);
 
-   statement.viewStatement();
+   statement.displayStatement();
 
    ```
 ## Screenshot of Project Running

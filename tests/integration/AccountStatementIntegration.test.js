@@ -10,7 +10,7 @@ describe("AccountStatement", () => {
     const transactions = account.depositMoney(1000.0);
 
     const statement = new AccountStatement(transactions);
-    expect(statement.viewStatement()).toEqual([
+    expect(statement.displayStatement()).toEqual([
       "20/5/2023 || 1000.00 ||  || 1000.00",
     ]);
   });
