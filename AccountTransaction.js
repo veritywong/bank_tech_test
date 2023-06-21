@@ -1,6 +1,7 @@
 class AccountTransaction {
   constructor() {
     this.transactions = [];
+    this.date = new Date;
   }
 
   calculateBalance() {
@@ -12,26 +13,31 @@ class AccountTransaction {
     return sum;
   }
 
-  depositMoney(date, amount) {
+  depositMoney(amount) {
     this.transactions.push({
-      date: date,
+      date: this.generateDate(),
       credit: +amount,
       debit: "",
       balance: this.calculateBalance() + +amount,
     });
+    return this.transactions
   }
 
-  withdrawMoney(date, amount) {
+  withdrawMoney(amount) {
     this.transactions.push({
-      date: date,
+      
+      date: this.generateDate(),
       credit: "",
       debit: +amount,
       balance: this.calculateBalance() - +amount,
     });
+    return this.transactions;
   }
 
-  viewTransactions() {
-    return this.transactions;
+
+  generateDate() {
+    let formattedDate = `${this.date.getDate()}/${this.date.getMonth()}/${this.date.getFullYear()}`
+    return formattedDate
   }
 }
 
