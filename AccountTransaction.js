@@ -36,12 +36,16 @@ class AccountTransaction {
       balance: this.calculateBalance() - +amount,
     });
 
+    return this.checkBalanceValid();
+  
+  }
+
+  checkBalanceValid() {
     if (this.transactions.slice(-1)[0].balance < 0) {
       throw new Error('Error: Insufficient credit')
     } else {
       return this.transactions
     }
-  
   }
 
 

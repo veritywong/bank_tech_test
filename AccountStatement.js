@@ -3,30 +3,28 @@ class AccountStatement {
     this.transactions = transactions;
   }
 
-  formatStatement() {
-   
-    return this.transactions.reverse().map((transaction) => {
-      const formattedCredit =
-        typeof transaction.credit === "number"
-          ? transaction.credit.toFixed(2)
-          : "";
-      const formattedDebit =
-        typeof transaction.debit === "number"
-          ? transaction.debit.toFixed(2)
-          : "";
-      const formattedBalance = transaction.balance.toFixed(2);
+  formatCredit(credit) {
+    return typeof credit === "number" ? credit.toFixed(2) : "";
+  }
 
-      const formattedStatement = `${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`;
+  formatDebit(debit) {
+    return typeof debit === "number" ? debit.toFixed(2) : "";
+  }
+
+  formatStatement() {
+    return this.transactions.reverse().map((transaction) => {
+      const credit = this.formatCredit(transaction.credit);
+      const debit = this.formatDebit(transaction.debit);
+      const balance = transaction.balance.toFixed(2);
+      const formattedValues = `${transaction.date} || ${credit} || ${debit} || ${balance}`;
       
-      console.log(formattedStatement)
-      return formattedStatement;
+      return formattedValues;
     });
   }
 
   displayStatement() {
-
     console.log("date || credit || debit || balance");
-    return this.formatStatement()
+    console.log(this.formatStatement().join("\n"));
   }
 }
 
