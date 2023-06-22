@@ -15,10 +15,11 @@ class AccountStatement {
           ? transaction.debit.toFixed(2)
           : "";
       const formattedBalance = transaction.balance.toFixed(2);
+
       const formattedStatement = `${transaction.date} || ${formattedCredit} || ${formattedDebit} || ${formattedBalance}`;
+      
       console.log(formattedStatement)
       return formattedStatement;
-      
     });
   }
 

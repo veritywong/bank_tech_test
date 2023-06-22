@@ -10,8 +10,11 @@ class AccountTransaction {
     for (let i = 0; i < this.transactions.length; i++) {
       sum += this.transactions[i].credit - this.transactions[i].debit;
     }
+    
     return sum;
+    
   }
+
 
   depositMoney(amount) {
     this.transactions.push({
@@ -20,6 +23,7 @@ class AccountTransaction {
       debit: "",
       balance: this.calculateBalance() + +amount,
     });
+
     return this.transactions
   }
 
@@ -31,7 +35,13 @@ class AccountTransaction {
       debit: +amount,
       balance: this.calculateBalance() - +amount,
     });
-    return this.transactions;
+
+    if (this.transactions.slice(-1)[0].balance < 0) {
+      throw new Error('Error: Insufficient credit')
+    } else {
+      return this.transactions
+    }
+  
   }
 
 

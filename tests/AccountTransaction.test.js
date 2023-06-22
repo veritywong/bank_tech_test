@@ -79,4 +79,13 @@ describe("AccountTransaction", () => {
       },
     ]);
   });
+
+  it('throws an error if withdrawing more than balance', () => {
+    account.depositMoney(500);
+
+    expect(() => {
+      account.withdrawMoney(1000)
+    }).toThrow('Error: Insufficient credit')
+  })
+  
 });
