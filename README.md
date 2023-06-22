@@ -69,7 +69,7 @@ I began by writing the tests for the AccountTransaction class, then writing the 
    ```
 ## Screenshot of Project Running
 
-![Project Running Screenshot](./images/ProjectRunning.png)
+![Project Running Screenshot](./images/RunningProgramme.png)
 
 ## How to run the tests
 Make sure you are in the bank_tech_test directory and then in your terminal, run jest:
@@ -83,7 +83,7 @@ Make sure you are in the bank_tech_test directory and then in your terminal, run
 
 ## Screenshot of Passing Tests
 
-![Passing Tests](./images/PassingTests.png)
+![Passing Tests](./images/PassingTests&Coverage.png)
 
 
 

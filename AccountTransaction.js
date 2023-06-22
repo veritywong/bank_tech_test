@@ -1,38 +1,28 @@
 class AccountTransaction {
   constructor() {
     this.transactions = [];
-    this.date = new Date;
+    this.date = new Date();
   }
-
-  calculateBalance() {
-    let sum = 0;
-
-    for (let i = 0; i < this.transactions.length; i++) {
-      sum += this.transactions[i].credit - this.transactions[i].debit;
-    }
-    
-    return sum;
-    
-  }
-
 
   depositMoney(amount) {
-    if (amount === undefined || amount === '') {
-      throw new Error('Invalid Input')
+    let integerAmount = +amount;
+
+    if (isNaN(integerAmount) || integerAmount === 0) {
+      throw new Error("Invalid Input");
     }
+
     this.transactions.push({
       date: this.generateDate(),
-      credit: +amount,
+      credit: integerAmount,
       debit: "",
-      balance: this.calculateBalance() + +amount,
+      balance: this.calculateBalance() + integerAmount,
     });
 
-    return this.transactions
+    return this.transactions;
   }
 
   withdrawMoney(amount) {
     this.transactions.push({
-      
       date: this.generateDate(),
       credit: "",
       debit: +amount,
@@ -40,21 +30,29 @@ class AccountTransaction {
     });
 
     return this.checkBalanceValid();
-  
+  }
+
+  calculateBalance() {
+    let balance = 0;
+
+    for (let i = 0; i < this.transactions.length; i++) {
+      balance += this.transactions[i].credit - this.transactions[i].debit;
+    }
+
+    return balance;
   }
 
   checkBalanceValid() {
     if (this.transactions.slice(-1)[0].balance < 0) {
-      throw new Error('Error: Insufficient credit')
+      throw new Error("Error: Insufficient credit");
     } else {
-      return this.transactions
+      return this.transactions;
     }
   }
 
-
   generateDate() {
-    let formattedDate = `${this.date.getDate()}/${this.date.getMonth()}/${this.date.getFullYear()}`
-    return formattedDate
+    let formattedDate = `${this.date.getDate()}/${this.date.getMonth()}/${this.date.getFullYear()}`;
+    return formattedDate;
   }
 }
 

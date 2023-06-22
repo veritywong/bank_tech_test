@@ -99,4 +99,10 @@ describe("AccountTransaction", () => {
       account.depositMoney("");
     }).toThrow("Invalid Input");
   });
+
+  it("throws an error if empty string inputted", () => {
+    expect(() => {
+      account.depositMoney("abdds");
+    }).toThrow("Invalid Input");
+  });
 });

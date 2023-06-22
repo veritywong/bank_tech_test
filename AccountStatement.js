@@ -17,7 +17,7 @@ class AccountStatement {
       const debit = this.formatDebit(transaction.debit);
       const balance = transaction.balance.toFixed(2);
       const formattedValues = `${transaction.date} || ${credit} || ${debit} || ${balance}`;
-      
+
       return formattedValues;
     });
   }

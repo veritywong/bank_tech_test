@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687443228509" clover="3.2.0">
-  <project timestamp="1687443228509" name="All files">
-    <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="12" coveredmethods="12" elements="46" coveredelements="46" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
+<coverage generated="1687447385841" clover="3.2.0">
+  <project timestamp="1687447385841" name="All files">
+    <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="12" coveredmethods="12" elements="53" coveredelements="53" complexity="0" loc="31" ncloc="31" packages="1" files="2" classes="2"/>
     <file name="AccountStatement.js" path="/Users/Verity/Projects/week_10/bank_tech_test/AccountStatement.js">
       <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="7" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="11" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="15" count="3" type="stmt"/>
-      <line num="16" count="7" type="stmt"/>
-      <line num="17" count="7" type="stmt"/>
-      <line num="18" count="7" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
-      <line num="21" count="7" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="7" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="16" count="8" type="stmt"/>
+      <line num="17" count="8" type="stmt"/>
+      <line num="18" count="8" type="stmt"/>
+      <line num="19" count="8" type="stmt"/>
+      <line num="21" count="8" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
       <line num="31" count="2" type="stmt"/>
     </file>
     <file name="AccountTransaction.js" path="/Users/Verity/Projects/week_10/bank_tech_test/AccountTransaction.js">
-      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
-      <line num="3" count="6" type="stmt"/>
-      <line num="4" count="6" type="stmt"/>
-      <line num="8" count="10" type="stmt"/>
-      <line num="10" count="10" type="stmt"/>
+      <metrics statements="19" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+      <line num="3" count="10" type="stmt"/>
+      <line num="4" count="10" type="stmt"/>
+      <line num="8" count="11" type="stmt"/>
+      <line num="10" count="11" type="stmt"/>
       <line num="11" count="5" type="stmt"/>
-      <line num="14" count="10" type="stmt"/>
-      <line num="20" count="8" type="stmt"/>
-      <line num="27" count="8" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="39" count="2" type="stmt"/>
-      <line num="44" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="45" count="1" type="stmt"/>
+      <line num="14" count="11" type="stmt"/>
+      <line num="18" count="12" type="stmt"/>
+      <line num="20" count="12" type="cond" truecount="4" falsecount="0"/>
+      <line num="21" count="3" type="stmt"/>
+      <line num="24" count="9" type="stmt"/>
+      <line num="31" count="9" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="42" count="2" type="stmt"/>
+      <line num="46" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="47" count="1" type="stmt"/>
-      <line num="53" count="10" type="stmt"/>
-      <line num="54" count="10" type="stmt"/>
-      <line num="58" count="2" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="54" count="11" type="stmt"/>
+      <line num="55" count="11" type="stmt"/>
+      <line num="59" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
