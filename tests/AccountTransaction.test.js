@@ -2,7 +2,7 @@ const AccountTransaction = require("../AccountTransaction");
 
 describe("AccountTransaction", () => {
   let account;
-  jest.useFakeTimers('modern');
+  jest.useFakeTimers("modern");
   jest.setSystemTime(new Date(2023, 5, 20));
 
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe("AccountTransaction", () => {
 
     expect(result).toEqual([
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: 1000,
         debit: "",
         balance: 1000,
@@ -27,13 +27,13 @@ describe("AccountTransaction", () => {
     result = account.depositMoney(2000.0);
     expect(result).toEqual([
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: 1000,
         debit: "",
         balance: 1000,
       },
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: 2000,
         debit: "",
         balance: 3000,
@@ -47,19 +47,19 @@ describe("AccountTransaction", () => {
     result = account.withdrawMoney(500.0);
     expect(result).toEqual([
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: 1000,
         debit: "",
         balance: 1000,
       },
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: 2000,
         debit: "",
         balance: 3000,
       },
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: "",
         debit: 500,
         balance: 2500,
@@ -72,7 +72,7 @@ describe("AccountTransaction", () => {
 
     expect(result).toEqual([
       {
-        date: '20/5/2023',
+        date: "20/5/2023",
         credit: 1000,
         debit: "",
         balance: 1000,
@@ -80,12 +80,23 @@ describe("AccountTransaction", () => {
     ]);
   });
 
-  it('throws an error if withdrawing more than balance', () => {
+  it("throws an error if withdrawing more than balance", () => {
     account.depositMoney(500);
 
     expect(() => {
-      account.withdrawMoney(1000)
-    }).toThrow('Error: Insufficient credit')
-  })
-  
+      account.withdrawMoney(1000);
+    }).toThrow("Error: Insufficient credit");
+  });
+
+  it("throws an error if number not inputted", () => {
+    expect(() => {
+      account.depositMoney();
+    }).toThrow("Invalid Input");
+  });
+
+  it("throws an error if empty string inputted", () => {
+    expect(() => {
+      account.depositMoney("");
+    }).toThrow("Invalid Input");
+  });
 });

@@ -17,6 +17,9 @@ class AccountTransaction {
 
 
   depositMoney(amount) {
+    if (amount === undefined || amount === '') {
+      throw new Error('Invalid Input')
+    }
     this.transactions.push({
       date: this.generateDate(),
       credit: +amount,
